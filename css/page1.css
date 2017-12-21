@@ -1,0 +1,262 @@
+body
+{
+	margin:0;
+	padding:0;
+	background: url('./../images/bg2.jfif');
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 15px;
+	width: 100%;
+}
+.container
+{
+	width: 100%;
+}
+.hide
+{
+	display: none;
+}
+.show
+{
+	display: block;
+	color: white;
+}
+.title
+{
+	display: inline-block;
+	color: white;
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 40px;
+}
+.login_body
+{
+	position: absolute;
+	width: 100%;
+	    height: 50%;
+    margin: auto;
+	text-align: center;
+	font-size: 18px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.login_body form
+{
+	width: 30%;
+	position: relative;
+    margin: auto;
+
+}
+.media
+{
+	color: white
+}
+.container-fluid
+{
+	color: orange;
+	background-color: orange;
+}
+.container-fluid ul li a span
+{
+	width: 20%;
+	height: 100%;
+	color: black;
+}
+.container-fluid ul li a span:hover
+{
+	width: 30%;
+	height: 100%;
+	color: white;
+}
+.media-body h4
+{
+	float: left;
+	width: 50%;
+	font-size: 14px;
+	display: inline-block;
+
+}
+.media-body p
+{
+	clear: both;
+	font-size: 17px;
+}
+.media
+{
+	    color: #666;
+    background-color: white;
+    opacity: 1;
+    padding: 8px 14px;
+}
+#add_more
+{
+	position: absolute;
+	right: 0;
+}
+.media_buttons span
+{
+	float: right;
+	margin-right: 20px
+	
+}
+#fb
+{
+	padding: 8px;
+	text-align: center;
+	margin: 5px 5px;
+}
+#blog
+{
+	padding: 8px;
+	margin: 5px 5px;
+}
+.facebook
+{
+	width: 39px;
+    height: 39px;
+	background: url('./../images/facebook.png') no-repeat;
+}
+.blog
+{
+	width: 39px;
+    height: 39px;
+	background: url('./../images/blog.png');
+}
+.comment
+{
+	color: black;
+	width: 88%;
+	margin: 10px;
+	font-size: 15px;
+}
+
+.added_comment
+{
+	background-color: white;
+    color: black;
+    width: 88%;
+    margin-left: 10px;
+    font-size: 15px;
+    height: 34px;
+       border: 2px solid black;
+  }
+.r
+{
+	background-color: red !important;
+}
+.g
+{
+	background-color: limegreen !important;	
+}
+#demo2
+{
+	color: black;
+}
+.search_box,.time_box
+{
+	padding: 10px 10px;
+	width: 49%;
+    height: 270px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    display: inline-block;
+    background: white;
+    opacity: 1;
+    border: 5px solid orange;
+}
+.search
+{
+
+	background-color: transparent;
+	width: 100%;
+	height:30px;
+	border: 2px solid black;
+}
+.content
+{
+	color: black;
+}
+.quiz
+{
+	    width: 74%;
+    margin: auto;
+    background-color: white;
+   
+    border: 5px solid orange;
+    padding: 10px 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.layout_quiz div
+{
+
+	width: 78%;
+    margin: auto;
+    color: black;
+    padding: 8px;
+    margin: 5px;
+    margin: 5px auto;
+    float: right;
+}
+
+#divProgress
+{
+	    height: 190px;
+    margin: auto;
+    /* display: block; */
+   float: left;
+}
+.button_view
+{
+	clear: both;
+	float: right
+}
+.new_question
+{
+	background-color: antiquewhite;
+	color: black;
+	width: 60%;
+	margin:auto;
+	clear: both;
+	
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 15px;
+}
+.new_question input
+{
+	width: 80%;
+	border: 1px solid black;
+	
+}
+.onlyques{
+	background-color: antiquewhite;
+	height: 266px;
+	width:80%;
+	overflow: scroll;
+	float: right;
+	font-family: Brush Script MT, Brush Script Std, cursive;
+	font-size: 15px;
+	padding: 10px 10px;
+}
+.new_question span
+{
+	padding: 10px 10px;
+}
+.add_question
+{
+	margin:auto;
+}
+.row
+{
+	
+    position: relative;
+}
+.image
+{
+	width: 100px;
+	height: 100px;
+	
+	margin: auto;
+	border:1px solid white;
+}

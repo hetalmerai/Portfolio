@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/page1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="login_body">
+      <img src="./images/profile.png" class="img-circle"  width="200" height="200">
+      <h2 class="title">ProfileMaker</h2><br>
+       <form >
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+              </div>
+              <div class="form-group hide" id="Invalid_input">
+                <h3>Please Enter valid Input!!!!!!</h3>
+              </div>
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">LOGIN</button>
+          </form>
+      
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+     console.log("hello")
+     $("button").on("click",function(){
+        var email=$("#email").val();
+        var password=$("#pwd").val();
+        console.log(email,password)
+        if(email=="hey@gmail.com" && password=="123")
+        {
+            console.log("Welcome","hey")
+            $(location).attr('href', 'profile.html');
+        }
+        else
+        {
+            $("#Invalid_input").removeClass("hide");
+             $("#Invalid_input").addClass("show");
+        }
+     })
+})
+</script>
+</body>
+</html>

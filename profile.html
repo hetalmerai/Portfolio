@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/page1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PROFILEMAKER</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a herf=" view.html "><span class="glyphicon glyphicon-eye-open"></span></a></li>
+      <li><a href="test_photo.html"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a href="view.html"><span class="glyphicon glyphicon-list-alt"></span></a></li>
+      <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> </a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+	
+ <!-- Left-aligned media object -->
+  <div class="media">
+    <div class="media-left">
+      <img src="./images/user.jpg" class="media-object" style="width:100px"></div>
+    	<div class="media-body">
+      		<h4 class="media-heading">Name:Abc</h4>
+        	<h4 >Send To:Pqr</h4>
+         	<h4 >Last Modified:12/12/2017</h4>
+          	<h4 >Time:15:00</h4>
+       		<h4 >Description:</h4>
+      		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      		<div id="demo2" class=" showmore hide">
+      		<p>
+		   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		  </div>
+      	
+    </div>
+    
+		<button type="button" id="add_comment" class="btn btn-info" >Comment</button>
+		<a  class="btn btn-info" id="fb"><span class="glyphicon glyphicon-thumbs-up"></span> </a>
+		<a  class="btn btn-info" id="blog"><span class="glyphicon glyphicon-thumbs-down"></span> </a>
+		<button type="button" class="btn btn-info" id="readmore">ReadMore</button>
+		<a href="#"><span class="facebook"></span></a>
+		  	<a href="#"><span class="blog"></span></a>
+		  <div id="demo" class="hide">
+			   <input class="comment" type="text" name="msg" placeholder=" Comment">
+		  </div>
+		  
+
+
+</div>
+</div>
+<button type="button" class="btn btn-info btn-lg" id="add_more">ADD MORE</button>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var x=""
+		var t=0
+		$(".container").on("click","#add_comment",function(){
+			$(this).parent().find("#demo").removeClass("hide").addClass("show")
+		})
+
+		$(".container").on("click","#readmore",function(){
+			if(t==0)
+			{
+				$(this).parent().find("#demo2").removeClass("hide").addClass("show")
+				t=1;
+			}
+			else
+			{
+				$(this).parent().find("#demo2").removeClass("show").addClass("hide")
+				t=0	
+			}
+			
+
+		})
+
+		$(".container").on("keypress","input",function(e){
+			 var key = e.which;
+ 			if(key == 13)  // the enter key code
+  			{
+   				x=$(this).val()
+   				console.log($(this).parent().find(".media"),"par")
+				$(this).parent().append(' <p class="added_comment"> '+x+'</p>')
+				$("input").val(" ")
+			}
+  		})
+		
+	
+
+		$(".container").on("click","#fb",function(){
+			
+			$(this).toggleClass("g")
+		})
+
+			$(".container").on("click","#blog",function(){
+
+				$(this).toggleClass("r")
+		})
+
+		$("#add_more").on("click",function(){
+
+
+			$(".container").append('  <div class="media"><div class="media-left"><img src="./images/user.jpg" class="media-object" style="width:100px"></div><div class="media-body"><h4 class="media-heading">Name:Abc</h4><h4 >Send To:Pqr</h4><h4 >Last Modified:12/12/2017</h4><h4 >Time:15:00</h4><h4 >Description:</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><div id="demo2" class="showmore hide"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div></div><button type="button" id="add_comment" class="btn btn-info" >Comment</button><a  class="btn btn-info" id="fb"><span class="glyphicon glyphicon-thumbs-up"></span> </a><a  class="btn btn-info" id="blog"><span class="glyphicon glyphicon-thumbs-down"></span> </a><button type="button" class="btn btn-info" id="readmore">ReadMore</button><a href="#"><span class="facebook"></span></a><a href="#"><span class="blog"></span></a><div id="demo" class="hide"><input class="comment" type="text" name="msg" placeholder=" Comment"></div></div>')
+		})
+	
+		
+	})
+</script>
+</html>

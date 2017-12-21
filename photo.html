@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/page1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/jquery-ui.css">
+  <style type="text/css">
+  .col1
+  {
+  	margin: 10px 10px;
+    display: inline-block;
+    /* text-decoration: none; */
+    font-size: 20px;
+    padding: 20px 20px;
+    border: 1px solid black;
+    text-align: left;
+    width: 16%;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+  }
+  .col2
+  {
+  	overflow: hidden;
+  	color: black;
+  	 background-color: white;
+  	display: inline-block;
+    border: 1px solid black;
+    padding: 10px 10px;
+    width: 82%;
+  }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PROFILEMAKER</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a herf="#"><span class="glyphicon glyphicon-eye-open"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a href=""><span class="glyphicon glyphicon-list-alt"></span></a></li>
+      <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> </a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+
+	<div class="col1 col-md-3">
+  <ul >
+    <li class="active"><a data-toggle="tab" href="#home">Map</a></li>
+    <li><a data-toggle="tab" href="#menu1">Toggle</a></li>
+    <li><a data-toggle="tab" href="#menu2">Combobox</a></li>
+    <li><a data-toggle="tab" href="#menu3">Date</a></li>
+  </ul>
+</div>
+  <div class="tab-content col2 col-md-9">
+    <div id="home" class="tab-pane fade in active">
+    
+      <div style="width:400px;height:400px;background:yellow"><iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15045.950548681303!2d72.83381185!3d19.4776452!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1513254968138" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+        
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+     <div class="time_box col-md-6">
+		<div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/country/in"><span style="color:gray;">Current local time in</span><br />India</a></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FKolkata" width="100%" height="115" frameborder="0" seamless></iframe> </div>
+		<input id="date" type="date">	
+	</div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(19.47765, 	72.83381),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+</body>
+</html>

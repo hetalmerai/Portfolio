@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/page1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/jquery-ui.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PROFILEMAKER</a>
+    </div>
+   <ul class="nav navbar-nav navbar-right">
+      <li><a href="profile.html"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a herf=" view.html "><span class="glyphicon glyphicon-eye-open"></span></a></li>
+      <li><a href="test_photo.html"><span class="glyphicon glyphicon-user"></span> </a></li>
+      <li><a href="view.html"><span class="glyphicon glyphicon-list-alt"></span></a></li>
+      <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> </a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+<div class="row">
+<div class="search_box col-md-6">
+	<label for="autocomplete">Select a programming language: </label>
+<input id="autocomplete">	
+	<div class="add"></div>
+
+	<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+  <div class="add"></div>
+</div>
+</div>
+
+<div class="time_box col-md-6">
+		<div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/country/in"><span style="color:gray;">Current local time in</span><br />India</a></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FKolkata" width="100%" height="115" frameborder="0" seamless></iframe> </div>	
+</div>
+</div>
+</div>
+<div class="quiz">
+	<div id="divProgress"></div>
+	<div class="onlyques">
+	<div class="layout_quiz">
+	<div id="1" class="question "><STRONG>  Question cvndkjfnkdsjnjknskj </STRONG></div>
+	<div><INPUT TYPE="radio" NAME="q1" id="a" VALUE="a" ><span id="w">hjchjb</span></div>
+	<div><INPUT TYPE="radio" NAME="q1" id="b" VALUE="b" ><span id="x">dfsdf</span></div>
+	<div><INPUT TYPE="radio" NAME="q1" id="c" VALUE="c" ><span id="y">sffasf</span></div>
+	<div><INPUT TYPE="radio" NAME="q1" id="d" VALUE="d"><span id="z">fasafsaf</span></div>
+	</div>
+	<div class="layout_quiz">
+	<div id="2" class="question "><STRONG>  Question cvndkjfnkdsjnjknskj </STRONG></div>
+	<div><INPUT TYPE="radio" NAME="q2" id="a" VALUE="a" ><span id="w">hjchjb</span></div>
+	<div><INPUT TYPE="radio" NAME="q2" id="b" VALUE="b" ><span id="x">dfsdf</span></div>
+	<div><INPUT TYPE="radio" NAME="q2" id="c" VALUE="c" ><span id="y">sffasf</span></div>
+	<div><INPUT TYPE="radio" NAME="q2" id="d" VALUE="d"><span id="z">fasafsaf</span></div>
+	</div>
+	</div>
+	<div class="button_view">
+	<button type="button" class="btn btn-info btn-lg submit" >Submit</button>
+	<button type="button" class="btn btn-info btn-lg newquestion" >New Question</button>
+	<button type="button" class="btn btn-info btn-lg reset" >Reset</button>
+	
+	</div>
+	<div class="new_question hide">
+		<p><span>Question:</span><input type="text" name="question" class="q" placeholder="Question"></p>
+		<p><span>Option A:</span><input type="text" name="question" class="oa"></p>
+		<p><span>Option B:</span><input type="text" name="question" class="ob"></p>
+		<p><span>Option C:</span><input type="text" name="question" class="oc"></p>
+		<p><span>Option D:</span><input type="text" name="question" class="od"></p>
+		<p><span>Answer:</span><input type="text" name="question" class="finalans"></p>
+		<button type="button" class="btn btn-info add_question" >Add Question</button>
+	</div>
+</div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js "></script>
+<script src="./js/CircularLoader-v1.3.js"></script>
+
+  <script src="./js/jquery-ui.js"></script>
+<script type="text/javascript">
+	
+	 var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+   
+
+	  $( "#tags" ).autocomplete({
+      source: availableTags
+    });																		
+	var count=2
+	var percentage=0
+	var percent=100/count
+	var finalans=[{0:0}]
+	var result=["","a","b"]
+	$(document).ready(function(){
+		$("#divProgress").circularloader({
+				backgroundColor: "#ffffff",//background colour of inner circle
+				fontColor: "#000000",//font color of progress text
+				fontSize: "40px",//font size of progress text
+				radius: 70,//radius of circle
+				progressBarBackground: "black",//background colour of circular progress Bar
+				progressBarColor: "orange",//colour of circular progress bar
+				progressBarWidth: 25,//progress bar width
+				progressPercent: 0,//progress percentage out of 100
+				progressValue:0,//diplay this value instead of percentage
+				showText: true,//show progress text or not
+				title: "Any Title",//show header title for the progress bar
+				});
+
+		$("input[type='radio']").prop("checked",false)
+		$("#divProgress").circularloader({
+		progressPercent: 0
+		});
+		
+		var ans=[{1:"dfsdf"},{2:"sffasf"}]
+		var tags = [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ];
+		
+
+			$( "#autocomplete" ).autocomplete({
+			  			source: function( request, response ) {
+			          var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+			          response( $.grep( tags, function( item ){
+			              return matcher.test( item );
+			          }) );
+			      }
+			});
+		$("#tags").on("keypress",function(e)
+		{	var key = e.which;
+			if(key == 13)  // the enter key code
+  			{
+   				var x=$(this).val()
+   				$(this).next().append('<button type="button" class="btn btn-default btn-sm">'+ x+'<span class="glyphicon glyphicon-remove"></span></button>')
+				$("input").val(" ")
+			}
+			
+	  $( "#tags" ).autocomplete({
+      source: availableTags
+    });	
+			
+		})
+
+		$(".add").on("click","span",function(){
+			$(this).parent("button").hide()
+		})
+		$(".quiz").on("change",'.layout_quiz',function(){
+
+			selected_value = $(this).find("input:checked").val()
+			
+			if(($(this).find('.question').attr('id')) in finalans)
+			{
+				finalans[$(this).find('.question').attr('id')].value=selected_value
+				console.log($(this).find('.question').attr('id'),selected_value)
+			}
+			else
+			{	console.log(percentage,percent)
+				percentage =percentage+percent
+				$("#divProgress").circularloader({
+					progressPercent:percentage
+				});
+			finalans.push({id:$(this).find('.question').attr('id'),
+							value:selected_value})
+			}
+				console.log(finalans)	
+		})
+		 
+		
+
+		  var p=0
+		  $(".newquestion").on("click",function(){
+		  	console.log("a")
+			if(p==0)
+			{
+				$('.new_question').removeClass("hide").addClass("show")
+				p=1;
+			}
+			else
+			{
+				$('.new_question').removeClass("show").addClass("hide")
+				p=0	
+			}
+			
+
+		})
+
+		  $(".add_question").on("click",function(){
+		  		count++;
+		  	var q=$('.q').val()
+		  	var a=$('.oa').val()
+		  	var b=$('.ob').val()
+	  		var c=$('.oc').val()
+	  		var d=$('.od').val()
+	  		var final=$('.finalans').val()
+	  		result.push(final)
+	  		ans.push(count,final)
+
+		  	$(".onlyques").append('<div class="layout_quiz"><div id='+count +' class="question "><STRONG>  Question '+q+' </STRONG></div><div><INPUT TYPE="radio" NAME="q'+count+'" id="a" VALUE="a" ><span id="w">'+a+'</span></div><div><INPUT TYPE="radio" NAME="q'+count+'" id="b" VALUE="b" ><span id="x">'+ b+'</span></div><div><INPUT TYPE="radio" NAME="q'+count+'" id="c" VALUE="c" ><span id="y">'+c+'</span></div><div><INPUT TYPE="radio" NAME="q'+count+'" id="d" VALUE="d"><span id="z">'+d+'</span></div></div>')
+		  	
+		  	$("#divProgress").circularloader({
+					progressPercent:(100/$(".layout_quiz").length )*(finalans.length-1)
+				});
+		  
+		  	percentage=(100/$(".layout_quiz").length )*(finalans.length-1)
+		  	percent=(100-percentage)/(result.length-finalans.length)
+		  })
+
+		  var score=0;
+		  $(".submit").on("click",function()
+		  {
+		  		console.log(finalans,result)
+		  		for(var i=1;i<result.length;i++)
+		  		{
+		  			for(var j=1;j<finalans.length;j++)
+		  			{
+		  				if(finalans[j].id==i)
+		  				{
+		  					if(result[i]==finalans[j].value)
+		  						score=score+1;
+		  				}
+		  			}
+		  		}
+		  		console.log(score)
+		  		alert("Score is  "+ score)
+		  })
+
+		  $(".reset").on("click",function(){
+		  				$("#divProgress").circularloader({
+					progressPercent:0
+					});
+		  			finalans=[{0:0}]
+						score=0
+						console.log($(".layout_quiz").find("input:checked").prop("checked",false))
+
+						
+				});
+
+		  })
+			
+	
+</script>
+</html>
